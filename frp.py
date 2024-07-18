@@ -17,6 +17,7 @@ use_frpc = True
 frp_token = "****"   # 这里填服务器密码（token）
 port1 = "00000"   # 这里填第一个端口
 port2 = "00000"   # 这里填第二个端口
+
 config = f"""
 [common]
 server_addr = 154.44.10.30
