@@ -21,8 +21,8 @@ port2 = "00000"   # 这里填第二个端口
 
 config = f"""
 [common]
-server_addr = 154.44.10.30
-server_port = 7500
+server_addr = 45.194.32.78
+server_port = 7000
 token = {frp_token} 
 
 [sdwebuip_{port1}] 
