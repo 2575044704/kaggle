@@ -13,6 +13,9 @@ config1 = f"""
 server_addr = 45.194.32.78
 server_port = 7000
 token = {frp_token} 
+heartbeat_interval = 30
+tcpKeepalive = 10
+heartbeat_timeout = 43200
 
 [sdwebuip_{port1}] 
 type = tcp
@@ -26,6 +29,9 @@ config2 = f"""
 server_addr = 45.194.32.78
 server_port = 7000
 token = {frp_token} 
+heartbeat_interval = 30
+tcpKeepalive = 10
+heartbeat_timeout = 43200
 
 [sdwebuip_{port2}] 
 type = tcp
