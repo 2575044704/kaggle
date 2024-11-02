@@ -43,7 +43,7 @@ remote_port = {port1}
 
 config2 = f"""
 [common]
-server_addr = 45.194.32.78
+server_addr = {dynamic_ip}
 server_port = 7000
 token = {frp_token} 
 heartbeat_interval = 30
