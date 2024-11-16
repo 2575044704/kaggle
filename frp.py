@@ -1,9 +1,10 @@
-# 使用的库
 ## 提示（必看！！）：
 ## 1.使用前请先导入net tools工具，链接：https://www.kaggle.com/datasets/leaffallen/net-tools-new 
 ## 2.如果有问题联系qq2575044704
-## 3.密码严禁分享给他人，禁止放在公开的互联网上
+## 3.密码严禁分享给他人，禁止放在公开的互联网上。造成法律责任后果自负
 ## 4.使用此frp代码，请勿将notebook设置为public(共享)，否则密码会泄露
+# 使用的库
+
 import subprocess
 import os
 import threading
