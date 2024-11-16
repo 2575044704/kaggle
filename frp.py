@@ -64,7 +64,7 @@ with open('./cyanfrp1.ini', 'w') as config_file:
 with open('./cyanfrp2.ini', 'w') as config_file:
     config_file.write(config2)
 print(f"配置文件已创建")
-#subprocess.run(['cp', '/kaggle/input/d/yiyiooo/net-tools/frpc', '/kaggle/working'])
+#subprocess.run(['cp', '/kaggle/input/net-tools/frpc', '/kaggle/working'])
 subprocess.run(['cp', '/kaggle/input/net-tools-new/frpc', '/kaggle/working'])
 subprocess.run(['chmod', '+x', '/kaggle/working/frpc'], check=True)
 def install_Frpc(file_path, port, use_frpc, log_file_path):
