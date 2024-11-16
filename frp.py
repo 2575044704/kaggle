@@ -59,10 +59,6 @@ local_port = 7861
 remote_port = {port2} 
 """
 
-with open('./cyanfrp2.ini', 'w') as config_file:
-    config_file.write(config2)
-print(f"配置文件已创建")
-
 with open('./cyanfrp1.ini', 'w') as config_file:
     config_file.write(config1)
 with open('./cyanfrp2.ini', 'w') as config_file:
