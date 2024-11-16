@@ -3,20 +3,33 @@
 ## 2.如果有问题联系qq2575044704
 ## 3.密码严禁分享给他人，禁止放在公开的互联网上。造成法律责任后果自负
 ## 4.使用此frp代码，请勿将notebook设置为public(共享)，否则密码会泄露
-# 使用的库
 
 import subprocess
 import os
 import threading
+import requests
 
 use_frpc = True
 frp_token = "*******"   # 这里填服务器密码（token）
 port1 = "00000"   # 这里填第一个端口
 port2 = "00000"   # 这里填第二个端口
 
+# URL of the file
+url = 'https://hf-mirror.com/datasets/nyan102/kagglemodel/resolve/main/ip'
+# Send a GET request to the URL
+response = requests.get(url)
+# Check if the request was successful
+if response.status_code == 200:
+    # Store the content in the variable dynamic_ip
+    dynamic_ip = response.text
+    print(f"获取的IP为{dynamic_ip}，将使用此IP进行连接")  # Optional: print the content
+else:
+    print(f"出错了，联系管理员！ Status code: {response.status_code}")
+# webui默认的local_port 为 7860，ComfyUI的local_port为8188，如果你想映射其它应用端口，请自行修改
+
 config1 = f"""
 [common]
-server_addr = 45.194.32.78
+server_addr = {dynamic_ip}
 server_port = 7000
 token = {frp_token} 
 heartbeat_interval = 30
@@ -32,7 +45,7 @@ remote_port = {port1}
 
 config2 = f"""
 [common]
-server_addr = 45.194.32.78
+server_addr = {dynamic_ip}
 server_port = 7000
 token = {frp_token} 
 heartbeat_interval = 30
@@ -45,6 +58,10 @@ local_ip = 127.0.0.1
 local_port = 7861
 remote_port = {port2} 
 """
+
+with open('./cyanfrp2.ini', 'w') as config_file:
+    config_file.write(config2)
+print(f"配置文件已创建")
 
 with open('./cyanfrp1.ini', 'w') as config_file:
     config_file.write(config1)
