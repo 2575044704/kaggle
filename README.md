@@ -7,7 +7,7 @@
 
 ---
 
-## 方法一：通过 URL 链接下载（推荐）
+## 方法一：通过 URL 链接下载
 
 脚本会在启动时自动从 Civitai 或 HuggingFace 下载模型。
 
@@ -51,15 +51,16 @@ lora_model_urls=[
 
 ---
 
-## 方法二：挂载 Kaggle Dataset（极速启动）
+## 方法二：挂载 Kaggle Dataset（推荐，万能方法）
 
-如果你不想每次启动都消耗时间下载模型，可以使用 Kaggle 的 Dataset 功能。
+如果你不想每次启动都消耗时间下载模型，或者有些模型无法下载，可以使用 Kaggle 的 Dataset 功能。
 
 ### 📋 操作步骤
 
 1. **添加数据集**：
    - 在 Kaggle 代码编辑页右侧边栏，点击 **`+ Add Input`**。
-   - 搜索你需要的模型（如 "Stable Diffusion v1.5" 或 "ChilloutMix"）。
+   - 搜索你需要的模型（如 "Stable Diffusion XL"）。
+   - 如果没有，你可以自己上传。自己创建一个数据集。
    - 点击右侧 `+` 号添加。
 
 2. **获取路径**：
@@ -69,13 +70,16 @@ lora_model_urls=[
 3. **修改代码**：
    - 找到 **不带 urls 后缀** 的变量（如 `sd_model`），粘贴路径。
 
+4. **图解**
+   <img width="1910" height="915" alt="image" src="https://github.com/user-attachments/assets/ee3cd559-8d59-4318-b345-9ef96f4dd585" />
+
 ```python
 # Stable Diffusion模型数据集路径
 sd_model = [
     '/kaggle/input/9527-fp16',
     
     # 粘贴你刚才复制的路径
-    "/kaggle/input/chilloutmixni", 
+    "/kaggle/input/你的数据集名称", 
 ]
 ```
 
