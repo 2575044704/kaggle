@@ -15,7 +15,7 @@ port1 = "00000"   # 这里填第一个端口
 port2 = "00000"   # 这里填第二个端口
 
 # URL of the file
-url = 'https://hf-mirror.com/datasets/nyan102/kagglemodel/resolve/main/ip'
+url = 'https://huggingface.co/datasets/nyan102/kagglemodel/resolve/main/ip'
 # Send a GET request to the URL
 response = requests.get(url)
 # Check if the request was successful
@@ -64,7 +64,7 @@ with open('./cyanfrp1.ini', 'w') as config_file:
 with open('./cyanfrp2.ini', 'w') as config_file:
     config_file.write(config2)
 print(f"配置文件已创建")
-subprocess.run(['cp', '/kaggle/input/net-tools/frpc', '/kaggle/working'])
+subprocess.run(['cp', '/kaggle/input/datasets/leaffallen/net-tools-new/frpc', '/kaggle/working'])
 subprocess.run(['cp', '/kaggle/input/net-tools-new/frpc', '/kaggle/working'])
 subprocess.run(['chmod', '+x', '/kaggle/working/frpc'], check=True)
 def install_Frpc(file_path, port, use_frpc, log_file_path):
